@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FACO</string>
+    <string name="pref_key_first_run">pref_first_run</string>
+    <string name="pref_key_onboarding_status">pref_onboarding_status</string>
+    <string name="pref_key_auth_status">pref_auth_status</string>
+    <string name="btn_get_started">Get Started</string>
+    <string name="onboarding_one_header">Portable Checkup</string>
+    <string name="onboarding_one_body">Get a checkup anytime, anywhere \nusing only your phone</string>
+    <string name="onboarding_two_header">A.I. Stethoscope</string>
+    <string name="onboarding_two_body">Get instant, accurate results \nvia machine learning</string>
+    <string name="onboarding_three_header">Real Diagnosis</string>
+    <string name="onboarding_three_body"><![CDATA[Connect with a doctor & get the \ncare you need]]></string>
+    <string name="faco">FACO</string>
+    <string name="faco_theme">FIGHT AGAINST CORONA</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="btn_log_in">Log In</string>
+</resources>
