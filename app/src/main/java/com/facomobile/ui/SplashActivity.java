@@ -64,6 +64,7 @@ public class SplashActivity extends AppCompatActivity {
         startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
+                        .setLogo(R.drawable.faco_logo_large)
                         .setAvailableProviders(Arrays.asList(
                                 new AuthUI.IdpConfig.GoogleBuilder().build(),
                                 new AuthUI.IdpConfig.EmailBuilder().build(),
