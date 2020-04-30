@@ -7,4 +7,10 @@
     <dimen name="textCaptionMenu">14dp</dimen>
     <dimen name="onboarding_indicator_regular">8dp</dimen>
     <dimen name="onboarding_indicator_large">11dp</dimen>
+    <dimen name="input_field_height">52dp</dimen>
+
+
+    <dimen name="action_button_height">53dp</dimen>
+    <dimen name="action_button_text_size">18sp</dimen>
+    <dimen name="input_field_text_size">16sp</dimen>
 </resources>

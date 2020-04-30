@@ -14,4 +14,22 @@
     <string name="faco_theme">FIGHT AGAINST CORONA</string>
     <string name="btn_sign_up">Sign Up</string>
     <string name="btn_log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_continue">Continue</string>
+    <string name="timer_resend_code">00:00</string>
+    <string name="action_resend_code">Resend Code</string>
+    <string name="phone_verification_code_sent">A verification code has been sent to your phone number. Please enter it below</string>
+    <string name="phone_verification_sending_code">Sending verification code…</string>
+    <string name="btn_verify">Verify</string>
+    <string name="error_creating_account_unknown">An error occurred while verifying phone number. Please try again</string>
+    <string name="error_unknown">An unknown error occurred. Please try again</string>
+    <string name="phone_verification_code_resent">Code Resent!</string>
+    <string name="notif_code_sent">The code has been sent. Try again if you don\'t receive it after some time</string>
+    <string name="error_unable_to_connect">Unable to connect. Please check your internet connection</string>
+    <string name="error_incorrect_code">Incorrect code</string>
+    <string name="error_phone_number_verification">Couldn\'t verify your phone number. Please try again</string>
 </resources>

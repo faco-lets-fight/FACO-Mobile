@@ -1,4 +1,4 @@
-package com.stargradegroup.vtuservices.cta.utilities
+package com.facomobile.utilities
 
 import android.content.Context
 import android.content.Context.CONNECTIVITY_SERVICE
