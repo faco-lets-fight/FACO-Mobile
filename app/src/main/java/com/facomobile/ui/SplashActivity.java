@@ -1,11 +1,13 @@
 package com.facomobile.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
 
@@ -13,10 +15,18 @@ import com.facomobile.R;
 import com.facomobile.data.AppRepository;
 import com.facomobile.utilities.CustomNavUtils;
 import com.facomobile.utilities.PreferenceUtils;
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.ErrorCodes;
+import com.firebase.ui.auth.IdpResponse;
+import com.google.android.material.snackbar.Snackbar;
 import com.stargradegroup.vtuservices.cta.utilities.InjectorUtils;
+
+import java.util.Arrays;
 
 
 public class SplashActivity extends AppCompatActivity {
+
+    private static final int RC_SIGN_IN = 1001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,23 +43,16 @@ public class SplashActivity extends AppCompatActivity {
     private void initComponent() {
         final boolean isOnboarded = PreferenceUtils.INSTANCE.getOnboardingStatus(this);
         if (isOnboarded) {
-            boolean isUserSignedIn = PreferenceUtils.INSTANCE.getPrefAuthStatus(this);
-            if (isUserSignedIn) {
-                AppRepository repository = InjectorUtils.INSTANCE.provideRepository(this);
-                AUTH_STATUS authStatus = repository.getUserAuthStatus();
-                switch (authStatus) {
-                    case SIGNED_OUT:
-                        new Handler().postDelayed(() ->
-                                CustomNavUtils.launchInitScreen(this), 3000);
-                        break;
-                    case SIGNED_IN:
-                        new Handler().postDelayed(() ->
-                                CustomNavUtils.launchMainScreen(this), 3000);
-                        break;
-                }
-            } else {
-                new Handler().postDelayed(() ->
-                        CustomNavUtils.launchInitScreen(this), 3000);
+            AppRepository repository = InjectorUtils.INSTANCE.provideRepository(this);
+            AUTH_STATUS authStatus = repository.getUserAuthStatus();
+            switch (authStatus) {
+                case SIGNED_OUT:
+                    new Handler().postDelayed(this::launchAuthUI, 3000);
+                    break;
+                case SIGNED_IN:
+                    new Handler().postDelayed(() ->
+                            CustomNavUtils.launchMainScreen(this), 3000);
+                    break;
             }
         } else {
             new Handler().postDelayed(() ->
@@ -57,6 +60,49 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
+    private void launchAuthUI() {
+        startActivityForResult(
+                AuthUI.getInstance()
+                        .createSignInIntentBuilder()
+                        .setAvailableProviders(Arrays.asList(
+                                new AuthUI.IdpConfig.GoogleBuilder().build(),
+                                new AuthUI.IdpConfig.EmailBuilder().build(),
+                                new AuthUI.IdpConfig.PhoneBuilder().build()))
+                        .build(),
+                RC_SIGN_IN);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // RC_SIGN_IN is the request code you passed into startActivityForResult(...) when starting the sign in flow.
+        if (requestCode == RC_SIGN_IN) {
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+
+            // Successfully signed in
+            if (resultCode == RESULT_OK) {
+                CustomNavUtils.launchMainScreen(this);
+            } else {
+                // Sign in failed
+                if (response == null) {
+                    launchAuthUI();
+                    return;
+                }
+
+                View root = findViewById(R.id.root);
+                if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
+                    Snackbar.make(root, getString(R.string.error_network_connection),
+                            Snackbar.LENGTH_LONG).show();
+                    new Handler().postDelayed(this::launchAuthUI, 2000);
+                    return;
+                }
+
+                Snackbar.make(root, getString(R.string.error_unknown),
+                        Snackbar.LENGTH_LONG).show();
+                new Handler().postDelayed(this::launchAuthUI, 2000);
+            }
+        }
+    }
 
     private void setupStatusBar() {
         View mRoot = findViewById(R.id.root);

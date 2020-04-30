@@ -49,7 +49,7 @@ object PreferenceUtils {
         editor.apply()
     }
 
-    fun getPrefAuthStatus(context: Context): Boolean {
+    /*fun getPrefAuthStatus(context: Context): Boolean {
         val sharedPreferences: SharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(context)
         return sharedPreferences.getBoolean(context.getString(R.string.pref_key_auth_status), false)
@@ -61,7 +61,7 @@ object PreferenceUtils {
         val editor: SharedPreferences.Editor = sharedPreferences.edit()
         editor.putBoolean(context.getString(R.string.pref_key_auth_status), authStatus)
         editor.apply()
-    }
+    }*/
 
     /*public static boolean getFirstRunStatus(Context context) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
