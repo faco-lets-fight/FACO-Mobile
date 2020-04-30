@@ -7,6 +7,21 @@ import java.util.*
 
 object CustomDateUtils {
 
+    fun getDigitalTime(milliSeconds: Long): String {
+        val seconds = milliSeconds / 1000
+        val secondsString = if (seconds == 60L) "00" else if (seconds < 10) "0$seconds" else seconds.toString()
+
+        val minutes = seconds / 60
+        val minutesString = if (minutes < 10) "0$minutes" else minutes.toString()
+
+        val hours = minutes / 60
+        val hoursString = if (hours < 10) "0$hours" else hours.toString()
+
+        val minuteTime = String.format("%s:%s", minutesString, secondsString)
+
+        return if (hours > 0) String.format("%s:%s", hoursString, minuteTime) else minuteTime
+    }
+
     fun getReadableDateString(context: Context, timeInMillis: Long): String {
         val flags = (DateUtils.FORMAT_SHOW_DATE
                 or DateUtils.FORMAT_SHOW_YEAR
