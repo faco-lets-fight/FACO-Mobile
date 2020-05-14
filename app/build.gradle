@@ -27,6 +27,16 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
+    flavorDimensions "client"
+    productFlavors {
+        general {
+            applicationIdSuffix = ".general"
+        }
+
+        doctors {
+            applicationIdSuffix = ".doctors"
+        }
+    }
 }
 
 dependencies {
