@@ -8,7 +8,7 @@
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".general.ui.auth.signup.SignUpActivity">
+    tools:context=".doctors.ui.auth.signup.SignUpActivity">
 
     <TextView
         android:layout_width="wrap_content"

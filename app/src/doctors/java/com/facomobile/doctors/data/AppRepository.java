@@ -40,24 +40,24 @@ public class AppRepository {
     // For Singleton instantiation
     private static final Object LOCK = new Object();
     private static AppRepository sInstance;
-    private final PatientDao mPatientDao;
+    private final DoctorDao mDoctorDao;
     private final FirebaseNetworkOperations mFirebaseNetworkOperations;
     private final AppExecutors mExecutors;
 
-    private AppRepository(PatientDao patientDao, FirebaseNetworkOperations firebaseNetworkOperations,
+    private AppRepository(DoctorDao doctorDao, FirebaseNetworkOperations firebaseNetworkOperations,
                           AppExecutors executors) {
-        mPatientDao = patientDao;
+        mDoctorDao = doctorDao;
         mFirebaseNetworkOperations = firebaseNetworkOperations;
         mExecutors = executors;
     }
 
-    public synchronized static AppRepository getInstance(PatientDao patientDao,
+    public synchronized static AppRepository getInstance(DoctorDao doctorDao,
                                                          FirebaseNetworkOperations firebaseNetworkOperations,
                                                          AppExecutors executors) {
         Log.d(LOG_TAG, "Getting the repository");
         if (sInstance == null) {
             synchronized (LOCK) {
-                sInstance = new AppRepository(patientDao, firebaseNetworkOperations, executors);
+                sInstance = new AppRepository(doctorDao, firebaseNetworkOperations, executors);
                 Log.d(LOG_TAG, "Made new repository");
             }
         }

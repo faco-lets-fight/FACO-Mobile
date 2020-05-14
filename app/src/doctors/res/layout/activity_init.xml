@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@color/colorPrimaryDark"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".doctors.ui.init.InitActivity">
 
     <LinearLayout
@@ -23,10 +23,10 @@
             android:gravity="center"
             android:text="@string/faco"
             android:textAllCaps="true"
-            android:textColor="#fff"
-            app:fontFamily="@font/rubik_bold"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textSize="117.94sp" />
+            android:textColor="#fff"
+            android:textSize="117.94sp"
+            app:fontFamily="@font/rubik_bold" />
 
         <TextView
             android:id="@+id/tv_theme"
@@ -71,17 +71,17 @@
             android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
             android:paddingLeft="47dp"
-            android:paddingRight="47dp"
             android:paddingTop="4dp"
+            android:paddingRight="47dp"
             android:paddingBottom="4dp"
-            android:textSize="18sp"
-            app:fontFamily="@font/rubik_regular"
-            android:textColor="#fff"
             android:text="@string/btn_log_in"
             android:textAllCaps="true"
             android:textAppearance="?android:textAppearanceLarge"
-            android:background="?selectableItemBackground" />
+            android:textColor="#fff"
+            android:textSize="18sp"
+            app:fontFamily="@font/rubik_regular" />
 
     </LinearLayout>
 

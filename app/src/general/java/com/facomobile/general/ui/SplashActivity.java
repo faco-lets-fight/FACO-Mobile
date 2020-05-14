@@ -1,4 +1,4 @@
-package com.facomobile.general.ui;
+package com.facomobile.doctors.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
 
 import com.facomobile.R;
-import com.facomobile.general.data.AppRepository;
-import com.facomobile.general.utilities.CustomNavUtils;
-import com.facomobile.general.utilities.PreferenceUtils;
+import com.facomobile.doctors.data.AppRepository;
+import com.facomobile.doctors.utilities.CustomNavUtils;
+import com.facomobile.doctors.utilities.PreferenceUtils;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;

@@ -1,4 +1,4 @@
-package com.facomobile.general.ui.onboarding;
+package com.facomobile.doctors.ui.onboarding;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

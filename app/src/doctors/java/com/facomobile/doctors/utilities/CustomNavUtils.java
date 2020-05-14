@@ -8,15 +8,8 @@ import com.facomobile.doctors.ui.auth.login.LoginActivity;
 import com.facomobile.doctors.ui.auth.signup.SignUpActivity;
 import com.facomobile.doctors.ui.init.InitActivity;
 import com.facomobile.doctors.ui.main.MainActivity;
-import com.facomobile.doctors.ui.onboarding.OnboardingActivity;
 
 public class CustomNavUtils {
-    public static void launchOnboarding(Activity source) {
-        Intent intent = new Intent(source, OnboardingActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        source.startActivity(intent);
-    }
-
     public static void launchSplashScreen(Activity source) {
         Intent intent = new Intent(source, SplashActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

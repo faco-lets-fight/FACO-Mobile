@@ -7,10 +7,10 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 
-@Database(entities = {PatientEntry.class}, version = 1)
+@Database(entities = {DoctorEntry.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     private static final String LOG_TAG = AppDatabase.class.getSimpleName();
-    private static final String DATABASE_NAME = "faco_database";
+    private static final String DATABASE_NAME = "faco_doctors_database";
 
     // For Singleton instantiation
     private static final Object LOCK = new Object();
@@ -29,5 +29,5 @@ public abstract class AppDatabase extends RoomDatabase {
 
     // The associated DAOs for the database
 //    public abstract ResidentDao residentDao();
-    public abstract PatientDao patientDao();
+    public abstract DoctorDao doctorDao();
 }

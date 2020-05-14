@@ -1,4 +1,4 @@
-package com.facomobile.general.ui.onboarding;
+package com.facomobile.doctors.ui.onboarding;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
@@ -15,8 +15,8 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.facomobile.R;
-import com.facomobile.general.utilities.CustomNavUtils;
-import com.facomobile.general.utilities.PreferenceUtils;
+import com.facomobile.doctors.utilities.CustomNavUtils;
+import com.facomobile.doctors.utilities.PreferenceUtils;
 
 
 /**

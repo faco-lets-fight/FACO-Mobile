@@ -19,9 +19,9 @@ package com.stargradegroup.vtuservices.cta.utilities
 
 import android.content.Context
 import com.facomobile.AppExecutors
-import com.facomobile.general.data.AppRepository
-import com.facomobile.general.data.database.AppDatabase
-import com.facomobile.general.data.network.FirebaseNetworkOperations
+import com.facomobile.doctors.data.AppRepository
+import com.facomobile.doctors.data.database.AppDatabase
+import com.facomobile.doctors.data.network.FirebaseNetworkOperations
 
 /**
  * Provides static methods to inject the various classes needed for Sunshine
@@ -33,7 +33,7 @@ object InjectorUtils {
         val firebaseNetworkOperations: FirebaseNetworkOperations =
                 FirebaseNetworkOperations.getInstance()
         val executors: AppExecutors = provideExecutors()
-        return AppRepository.getInstance(database.patientDao(), firebaseNetworkOperations, executors)
+        return AppRepository.getInstance(database.doctorDao(), firebaseNetworkOperations, executors)
     }
 
     fun provideExecutors(): AppExecutors {

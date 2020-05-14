@@ -1,4 +1,4 @@
-package com.facomobile.general.ui.onboarding;
+package com.facomobile.doctors.ui.onboarding;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

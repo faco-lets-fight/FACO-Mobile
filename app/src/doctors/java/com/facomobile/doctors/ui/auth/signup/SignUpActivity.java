@@ -32,7 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         mRoot = findViewById(R.id.root);
 
-        EditText etFullname = findViewById(R.id.et_fullname),
+        EditText etFullname = findViewById(R.id.et_first_name),
                 etPassword = findViewById(R.id.et_password),
                 etPhoneNumber = findViewById(R.id.et_phone_number);
         ProgressBar pbWorking = findViewById(R.id.pb_working);
@@ -97,7 +97,7 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean isFormValid() {
         boolean result = true;
 
-        EditText etFullname = findViewById(R.id.et_fullname),
+        EditText etFullname = findViewById(R.id.et_first_name),
                 etPassword = findViewById(R.id.et_password),
                 etPhoneNumber = findViewById(R.id.et_phone_number);
 
