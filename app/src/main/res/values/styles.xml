@@ -89,4 +89,12 @@
         <item name="android:hint">@null</item>
         <item name="android:fontFamily">@font/rubik_regular</item>
     </style>
+
+    <style name="CustomFilePickerStyle">
+        <item name="android:layout_height">@dimen/input_field_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/auth_input_field_background</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
 </resources>
