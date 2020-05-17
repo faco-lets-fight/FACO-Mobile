@@ -45,6 +45,6 @@
     <string name="license_number">License Number</string>
     <string name="degree_photo">Degree Photo</string>
     <string name="label_confirm_password">Confirm Password</string>
-    <string name="hint_pick_file">Select File</string>
+    <string name="hint_pick_file">Tap to Pick Photo</string>
     <string name="btn_preview">Preview</string>
 </resources>

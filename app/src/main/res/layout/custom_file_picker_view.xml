@@ -18,10 +18,8 @@
             android:id="@+id/btn_file_picker_preview"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:alpha="0.5"
             android:background="@drawable/custom_file_picker_button_background"
-            android:clickable="false"
-            android:focusable="false"
+            android:enabled="false"
             android:text="@string/btn_preview" />
     </LinearLayout>
 

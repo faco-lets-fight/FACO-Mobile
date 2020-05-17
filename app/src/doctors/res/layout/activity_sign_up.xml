@@ -252,11 +252,11 @@
                 android:layout_marginTop="32dp">
 
                 <Button
-                    android:id="@+id/btn_submit"
+                    android:id="@+id/btn_continue"
                     style="@style/PrimaryActionButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="@string/btn_submit" />
+                    android:text="@string/btn_continue" />
 
                 <ProgressBar
                     android:id="@+id/pb_working"
