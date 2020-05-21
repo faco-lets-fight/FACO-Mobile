@@ -1,4 +1,4 @@
-package com.stargradegroup.vtuservices.cta.utilities
+package com.facomobile.utilities
 
 import android.app.Activity
 import android.app.AlertDialog

@@ -33,4 +33,7 @@
     <string name="error_incorrect_code">Incorrect code</string>
     <string name="error_phone_number_verification">Couldn\'t verify your phone number. Please try again</string>
     <string name="error_network_connection">Please check your network connection and try again</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
