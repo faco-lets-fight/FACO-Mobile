@@ -45,6 +45,12 @@
         <item name="android:fontFamily">@font/rubik_bold</item>
     </style>
 
+    <style name="FacoTabTextStyle">
+        <item name="android:textSize">@dimen/textHeaderTab</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
+    </style>
+
     <style name="FacoSubtitleTextStyle" parent="android:Widget.TextView">
         <item name="android:textSize">@dimen/textSubtitle</item>
         <item name="android:fontFamily">@font/rubik_regular</item>

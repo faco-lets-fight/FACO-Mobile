@@ -2,6 +2,7 @@
 <resources>
     <dimen name="textHeaderOne">36dp</dimen>
     <dimen name="textHeaderTwo">24dp</dimen>
+    <dimen name="textHeaderTab">16dp</dimen>
     <dimen name="textSubtitle">26dp</dimen>
     <dimen name="textBody">20dp</dimen>
     <dimen name="textCaptionMenu">14dp</dimen>
