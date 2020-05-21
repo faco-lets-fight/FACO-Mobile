@@ -9,21 +9,63 @@
         android:layout_height="match_parent"
         tools:context=".ui.main.HomeFragment">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/home_tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/welcome_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/hi_user"
+                    android:textAppearance="@style/FacoHeaderOneTextStyle"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/sub_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="40dp"
+                    android:text="@string/how_are_you"
+                    android:textAppearance="@style/FacoSubtitleTextStyle"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/welcome_user"
+                    app:layout_constraintTop_toBottomOf="@+id/welcome_user" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
         <View
             android:id="@+id/people"
             android:layout_width="match_parent"
             android:layout_height="173dp"
             android:layout_margin="0dp"
+            android:paddingBottom="-10dp"
             android:background="@drawable/ic_people"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/home_tool_bar" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/home_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="0dp"
             android:background="@color/colorPrimaryPink"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layout_constraintEnd_toEndOf="parent"

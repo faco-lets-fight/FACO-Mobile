@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.viewpager.widget.ViewPager
-import androidx.viewpager2.widget.ViewPager2
 import com.facomobile.R
 import com.facomobile.databinding.FragmentHomeBinding
 import com.facomobile.ui.main.home.AlertsFragment
@@ -20,10 +24,6 @@ import com.facomobile.ui.main.home.HomePagerAdapter
  */
 class HomeFragment : Fragment() {
 
-    // When requested, this adapter returns a DemoObjectFragment,
-    // representing an object in the collection.
-    private lateinit var homePagerAdapter: HomePagerAdapter
-    private lateinit var viewPager: ViewPager2
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +39,25 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val toolbar: Toolbar = view.findViewById(R.id.home_tool_bar)!!
+        val appBarConfiguration = AppBarConfiguration(
+                setOf(
+                        R.id.homeFragment,
+                        R.id.messagesFragment,
+                        R.id.resultsFragment,
+                        R.id.profileFragment
+                )
+        )
+
+        val navHostFragment = NavHostFragment.findNavController(this)
+        NavigationUI.setupWithNavController(toolbar, navHostFragment, appBarConfiguration)
+
+        setHasOptionsMenu(true)
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
         setupViewPager(binding.homePager)
         binding.homeTabLayout.setupWithViewPager(binding.homePager)
     }
+
 
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = HomePagerAdapter(childFragmentManager)

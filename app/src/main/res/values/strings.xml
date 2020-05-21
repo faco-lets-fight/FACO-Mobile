@@ -43,4 +43,7 @@
 
     <string name="hi_user">Hi Sam,</string>
     <string name="how_are_you">How are you feeling today?</string>
+    <string name="your_results">Your Results</string>
+    <string name="your_messages">Your Messages</string>
+    <string name="your_profile">Your Profile</string>
 </resources>
